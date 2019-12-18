@@ -5,6 +5,9 @@ import io.reactivex.ObservableSource;
 import io.reactivex.Observer;
 import io.reactivex.functions.BiFunction;
 import io.reactivex.functions.Consumer;
+import zcw.com.lib_rx_java.bean.AA;
+import zcw.com.lib_rx_java.bean.BB;
+import zcw.com.lib_rx_java.bean.CC;
 
 /**
  * Created by 朱城委 on 2019/12/18.<br><br>
@@ -49,16 +52,4 @@ public class ZipDemo {
                     }
                 });
     }
-}
-
-class AA {
-    String aa;
-}
-
-class BB {
-    String bb;
-}
-
-class CC {
-    String cc;
 }
