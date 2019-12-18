@@ -1,0 +1,31 @@
+����Ӧ�ã�
+adb shell am start -n com.csair.robot/com.csair.robot.robot.act.LCRobotMainActivity
+
+
+ֹͣӦ�ã�
+adb shell am force-stop com.csair.robot
+
+
+�鿴key��Ϣ��
+keytool -v -list -keystore ***.keystore
+
+
+Git�����µ�Զ�ֿ̲⣺
+git remote set-url --add origin git@gitlab.juanpi.org:bi-source/hiveUDF.git
+git branch --set-upstream-to origin/master master
+
+Git���¹���Զ�ֿ̲⣺
+git remote rm origin
+git remote add origin git@gitlab.juanpi.org:bi-source/hiveUDF.git
+
+Git����pull
+git pull origin master --allow-unrelated-histories   
+
+
+�鿴��Ҫ��Ȩ��Ȩ���飺
+adb shell pm list permissions -d -g
+
+
+����lib��jcenter
+1��gradlew install
+2��gradlew bintrayUpload

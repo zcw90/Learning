@@ -1,0 +1,31 @@
+启动应用：
+adb shell am start -n com.csair.robot/com.csair.robot.robot.act.LCRobotMainActivity
+
+
+停止应用：
+adb shell am force-stop com.csair.robot
+
+
+查看key信息：
+keytool -v -list -keystore ***.keystore
+
+
+Git关联新的远程仓库：
+git remote set-url --add origin git@gitlab.juanpi.org:bi-source/hiveUDF.git
+git branch --set-upstream-to origin/master master
+
+Git重新关联远程仓库：
+git remote rm origin
+git remote add origin git@gitlab.juanpi.org:bi-source/hiveUDF.git
+
+Git初次pull
+git pull origin master --allow-unrelated-histories   
+
+
+查看需要授权的权限组：
+adb shell pm list permissions -d -g
+
+
+发布lib到jcenter
+1、gradlew install
+2、gradlew bintrayUpload
