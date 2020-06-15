@@ -16,7 +16,6 @@ fun main() {
 private fun strStr(haystack: String, needle: String): Int {
     var i = 0
     var j = 0
-    var count = 0
 
     if(needle.isEmpty()) {
         return 0
@@ -26,16 +25,14 @@ private fun strStr(haystack: String, needle: String): Int {
         if(haystack[i] == needle[j]) {
             i++
             j++
-            count++
         }
         else {
-            i = i - count + 1
+            i = i - j + 1
             j = 0
-            count = 0
         }
 
-        if(count == needle.length) {
-            return i - count
+        if(j == needle.length) {
+            return i - j
         }
     }
     return -1
