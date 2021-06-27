@@ -1,1 +1,2 @@
+include ':lib_kotlin'
 include ':app', ':lib_rx_java', ':lib_regex', ':lib_leet_code', ':lib_java_basic', ':lib_sort', ':lib_structure', ':lib_jcip', ':lib_effective_java', ':lib_compile', 'lib_design_patterns'
