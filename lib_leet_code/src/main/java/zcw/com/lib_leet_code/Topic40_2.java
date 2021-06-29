@@ -12,12 +12,12 @@ import java.util.Map;
 /**
  * Created by 朱城委 on 2021/6/29.<br><br>
  */
-public class Topic40 {
+public class Topic40_2 {
 
     private static int counter = 0;
 
     public static void main(String[] args) {
-        Topic40 topic40 = new Topic40();
+        Topic40_2 topic40 = new Topic40_2();
 
         int[] nums = {1, 2, 7, 17, 15, 3};
         int target = 10;
@@ -51,7 +51,7 @@ public class Topic40 {
             return ;
         }
 
-        for(int i = startIndex; i < candidates.length; i++) {
+        for(int i = startIndex; i < candidates.length && candidates[i] <= target; i++) {
             counter++;
 
             if(i > startIndex && candidates[i] == candidates[i - 1]) {
@@ -62,49 +62,5 @@ public class Topic40 {
             sum(candidates, i + 1, target - candidates[i], stack, result);
             stack.pop();
         }
-    }
-
-    /**
-     * 数组去重
-     *
-     * @param nums 要去重的数组
-     * @return 返回去重后的数组
-     */
-    private int[] deDuplication(int[] nums) {
-        if(nums == null || nums.length == 0) {
-            return new int[] {};
-        }
-
-        // 利用HashMap去重
-        Map<Integer, Integer> map = new HashMap<>();
-        for(int i = 0; i < nums.length; i++) {
-            map.put(nums[i], i);
-        }
-
-        int index = 0;
-        int[] result = new int[map.size()];
-        for(int value : map.keySet()) {
-            result[index] = value;
-            index++;
-        }
-
-        return result;
-    }
-
-    /**
-     * 判断某个数是否存在于数组中
-     *
-     * @param nums 数组
-     * @param value 查找的数
-     * @return 存在返回true；否在返回false。
-     */
-    private boolean contain(int[] nums, int value) {
-        for(int val : nums) {
-            if(val == value) {
-                return true;
-            }
-        }
-
-        return false;
     }
 }
