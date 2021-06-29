@@ -37,6 +37,10 @@ public class Test {
                 if (!emitter.isDisposed()) {
                     for (int i = 0; i < 5; i++) {
                         emitter.onNext(i);
+
+                        if(i == 0) {
+                            int a = 10 / 0;
+                        }
                     }
 
                     emitter.onComplete();
@@ -55,7 +59,7 @@ public class Test {
 
             @Override
             public void onError(Throwable e) {
-                System.out.println("onError");
+                System.out.println("onError: " + e.getMessage());
             }
 
             @Override
