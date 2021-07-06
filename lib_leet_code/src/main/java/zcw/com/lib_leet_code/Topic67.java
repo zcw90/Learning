@@ -13,7 +13,7 @@ public class Topic67 {
         System.out.println(instance.addBinary("1010", "1011"));
     }
 
-    public String addBinary(String a, String b) {
+    public String addBinary2(String a, String b) {
         boolean carry = false;
 
         StringBuilder result = new StringBuilder();
@@ -90,5 +90,33 @@ public class Topic67 {
         }
 
         return result.toString();
+    }
+
+    public String addBinary(String a, String b) {
+        StringBuilder result = new StringBuilder();
+
+        int carry = 0;
+        int indexA = a.length() - 1;
+        int indexB = b.length() - 1;
+        while (indexA >= 0 || indexB >= 0) {
+            int sum = carry;
+
+            if(indexA >= 0) {
+                sum += a.charAt(indexA--) - '0';
+            }
+
+            if(indexB >= 0) {
+                sum += b.charAt(indexB--) - '0';
+            }
+
+            result.append(sum % 2);
+            carry = sum / 2;
+        }
+
+        if(carry != 0) {
+            result.append('1');
+        }
+
+        return result.reverse().toString();
     }
 }
